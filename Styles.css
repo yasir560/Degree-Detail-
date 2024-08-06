@@ -209,16 +209,25 @@ section {
     transform-style: preserve-3d;
 }
 
+/* Section Headers */
 section h2 {
     transform: rotateX(10deg);
     display: flex;
     align-items: center;
+    margin: 10px 0; /* Reduce vertical margin to bring headers closer together */
+    padding: 5px 0; /* Reduce vertical padding for tighter spacing */
 }
 
 section h2 i {
-    margin-right: 10px;
+    margin-right: 5px; /* Reduce space between icon and text */
     color: #007BFF;
 }
+
+/* Ensure each section has appropriate spacing */
+section {
+    margin-bottom: 30px; /* Reduce the bottom margin of each section */
+}
+
 
 .animate__fadeInUp {
     animation: fadeInUp 1s ease-in-out;
