@@ -1,121 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semester Details</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
             scroll-behavior: smooth;
             margin: 0;
-            padding: 0; /* Remove padding */
-            background: linear-gradient(to right, #008080, #FFFFFF); /* Teal gradient */
+            padding: 0;
+            /* Remove padding */
+            background: linear-gradient(to right, #008080, #FFFFFF);
+            /* Teal gradient */
         }
-        
+
         /* Header Styles */
         header {
-            background-color: rgba(0, 128, 128, 0.8); /* Teal color with transparency */
-            margin: 0; /* Removed margin */
+            background-color: rgba(0, 128, 128, 0.8);
+            /* Teal color with transparency */
             position: absolute;
             top: 0;
-            left: 0; /* Align to the left */
-            width: 100%; /* Full width */
-            text-align: center; /* Center the header content */
+            left: 0;
+            /* Align to the left */
+            width: 100%;
+            /* Full width */
+            text-align: center;
+            /* Center the header content */
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            /* Center the nav within the header */
+            align-items: center;
+            /* Center items vertically */
+            padding: 10px;
+            /* Add some padding for better appearance */
         }
-        
+
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center; /* Center nav items */
+            justify-content: center;
+            /* Center nav items */
+            flex-wrap: wrap;
+            /* Allow wrapping if needed */
         }
-        
+
+        nav ul li {
+            margin: 0;
+        }
+
         nav ul a {
             color: white;
             text-decoration: none;
             margin: 0;
             padding: 10px 20px;
             display: inline-block;
-            transition: transform 0.3s, background-color 0.3s; /* Transition for hover effect */
+            transition: transform 0.3s, background-color 0.3s;
+            /* Transition for hover effect */
         }
-        
+
+
         nav ul a:hover {
-            background-color: #008080; /* Updated hover color to teal */
-            transform: rotateY(15deg) scale(1.1); /* 3D hover effect */
+            background-color: #008080;
+            /* Updated hover color to teal */
+            transform: rotateY(15deg) scale(1.1);
+            /* 3D hover effect */
         }
-        
+
         /* Header Section Styles */
         .header-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Align items to the start (top) */
+            justify-content: flex-start;
+            /* Align items to the start (top) */
             height: 100vh;
             background: url('Semester.jpg') no-repeat center center;
-            background-size: cover; /* Cover the entire background */
-            color: white; /* Change text color to white for better contrast */
+            background-size: cover;
+            /* Cover the entire background */
+            color: white;
+            /* Change text color to white for better contrast */
             text-align: center;
-            padding-top: 20px; /* Adjust padding to move heading down from the top */
+            padding-top: 20px;
+            /* Adjust padding to move heading down from the top */
         }
-        
+
         .description {
             width: 60%;
         }
-        
+
         .description h1 {
             font-size: 2.5em;
             color: #003049;
             animation: neon 1.5s ease-in-out infinite alternate;
-            font-weight: bold; /* Make the heading bold */
+            font-weight: bold;
+            /* Make the heading bold */
         }
-        
+
         .description p {
             font-size: 1.2em;
-            color: #000000; /* Changed text color to black */
-            font-weight: bold; /* Make the text bold */
+            color: #000000;
+            /* Changed text color to black */
+            font-weight: bold;
+            /* Make the text bold */
             animation: fadeIn 2s ease-in-out;
         }
-        
+
         .description p:nth-of-type(1) {
             animation-delay: 0.5s;
         }
-        
+
         .description p:nth-of-type(2) {
             animation-delay: 1s;
         }
-        
+
         .description p:nth-of-type(3) {
             animation-delay: 1.5s;
         }
+
         main {
             padding: 20px;
+            margin-top: 60px;
+            /* Add margin to push content below fixed header */
         }
+
         section {
             display: none;
             margin-top: 20px;
         }
+
         section.active {
             display: block;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid #ddd;
         }
-        th, td {
+
+        th,
+        td {
             padding: 10px;
             text-align: left;
         }
+
         th {
             background-color: #f4f4f4;
         }
+
         a.download-link {
             display: inline-block;
             padding: 10px 20px;
@@ -126,11 +170,105 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+
         a.download-link:hover {
             background-color: #0056b3;
         }
+
+        /* Media Queries */
+
+        /* For screens larger than 768px */
+        @media (min-width: 768px) {
+            nav ul {
+                flex-wrap: nowrap;
+                /* Prevent wrapping */
+            }
+
+            nav ul a {
+                padding: 10px 20px;
+            }
+        }
+
+        /* For screens between 576px and 768px */
+        @media (max-width: 768px) and (min-width: 576px) {
+            nav ul {
+                flex-wrap: wrap;
+                /* Allow wrapping */
+            }
+
+            nav ul a {
+                padding: 8px 15px;
+                /* Adjust padding for smaller screens */
+            }
+        }
+
+        /* For screens smaller than 576px */
+        @media (max-width: 576px) {
+            nav ul {
+                flex-direction: column;
+                /* Stack items vertically */
+                align-items: center;
+                /* Center items horizontally */
+            }
+
+            nav ul a {
+                padding: 10px 15px;
+                /* Adjust padding */
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .description {
+                width: 90%;
+            }
+
+            .description h1 {
+                font-size: 2em;
+            }
+
+            .description p {
+                font-size: 1em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                /* Stack links vertically */
+            }
+
+            nav ul a {
+                padding: 10px;
+                margin: 0;
+                font-size: 0.9em;
+            }
+
+            main {
+                padding: 10px;
+                margin-top: 70px;
+                /* Adjust margin for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .description {
+                width: 100%;
+            }
+
+            .description h1 {
+                font-size: 1.5em;
+            }
+
+            .description p {
+                font-size: 0.9em;
+            }
+
+            nav ul a {
+                font-size: 0.8em;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header class="animate__animated animate__fadeIn">
         <nav>
@@ -181,9 +319,11 @@
                 </tr>
             </table>
             <h3>Past Papers</h3>
-            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
             <h3>Result</h3>
-            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Check Result</a>
         </section>
         <section id="Semester2" class="animate__animated animate__fadeIn">
             <h2>Semester 2</h2>
@@ -219,9 +359,11 @@
                 </tr>
             </table>
             <h3>Past Papers</h3>
-            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
             <h3>Result</h3>
-            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Check Result</a>
         </section>
         <section id="Semester3" class="animate__animated animate__fadeInUp">
             <h2>Semester 3</h2>
@@ -256,9 +398,11 @@
                 </tr>
             </table>
             <h3>Past Papers</h3>
-            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
             <h3>Result</h3>
-            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Check Result</a>
         </section>
         <section id="Semester4" class="animate__animated animate__fadeInUp">
             <h2>Semester 4</h2>
@@ -289,9 +433,11 @@
                 </tr>
             </table>
             <h3>Past Papers</h3>
-            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
             <h3>Result</h3>
-            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Check Result</a>
         </section>
         <section id="Semester5" class="animate__animated animate__fadeInUp">
             <h2>Semester 5</h2>
@@ -322,9 +468,11 @@
                 </tr>
             </table>
             <h3>Past Papers</h3>
-            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
             <h3>Result</h3>
-            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Check Result</a>
         </section>
         <section id="Semester6" class="animate__animated animate__fadeInUp">
             <h2>Semester 6</h2>
@@ -354,6 +502,11 @@
                     <td>3(3,0)</td>
                 </tr>
             </table>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <h3>Result</h3>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Check Result</a>
         </section>
         <section id="Semester7" class="animate__animated animate__fadeInUp">
             <h2>Semester 7</h2>
@@ -382,12 +535,14 @@
                     <td>CS Elective – IV</td>
                     <td>3(3,0)</td>
                 </tr>
-                
+
             </table>
             <h3>Past Papers</h3>
-            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
             <h3>Result</h3>
-            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Check Result</a>
         </section>
         <section id="Semester7" class="animate__animated animate__fadeInUp">
             <h2>Semester 7</h2>
@@ -416,12 +571,14 @@
                     <td>CS Elective – IV</td>
                     <td>3(3,0)</td>
                 </tr>
-                
+
             </table>
             <h3>Past Papers</h3>
-            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
             <h3>Result</h3>
-            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Check Result</a>
         </section>
         <section id="Semester8" class="animate__animated animate__fadeInUp">
             <h2>Semester 8</h2>
@@ -450,17 +607,19 @@
                     <td>Final Year Project</td>
                     <td>6(6,0)</td>
                 </tr>
-                
+
             </table>
             <h3>Past Papers</h3>
-            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
             <h3>Result</h3>
-            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400" target="_blank"
+                class="download-link animate__animated animate__fadeInUp">Check Result</a>
         </section>
 
-        
+
         <!-- Repeat similar sections for Semester 2 to Semester 8 -->
-        
+
     </main>
     <script>
         function showSemester(semesterId) {
@@ -472,4 +631,5 @@
         }
     </script>
 </body>
+
 </html>
