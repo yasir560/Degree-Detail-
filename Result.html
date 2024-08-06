@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Result Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #008080, #FFFFFF); /* Teal gradient */
+        }
+        
+        header {
+            background-color: #008080; /* Teal color */
+            /* Added padding at the top */
+            margin: 0; /* Removed margin */
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: auto; /* Adjust width to fit content */
+            z-index: 1000;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        nav ul a {
+            color: white;
+            text-decoration: none;
+            margin: 0;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: transform 0.3s, background-color 0.3s; /* Transition for hover effect */
+        }
+        
+        nav ul a:hover {
+            background-color: #008080; /* Updated hover color to teal */
+            transform: rotateY(15deg) scale(1.1); /* 3D hover effect */
+        }
+        
+        .header-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 20px 20px 20px; /* Adjust top padding to move heading up */
+            height: 100vh;
+        }
+        
+        .description {
+            width: 60%;
+        }
+        
+        .description h1 {
+            font-size: 2.5em;
+            color: #003049;
+            animation: neon 1.5s ease-in-out infinite alternate;
+            font-weight: bold; /* Make the heading bold */
+        }
+        
+        .description p {
+            font-size: 1.2em;
+            color: #000000; /* Changed text color to black */
+            font-weight: bold; /* Make the text bold */
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .description p:nth-of-type(1) {
+            animation-delay: 0.5s;
+        }
+        
+        .description p:nth-of-type(2) {
+            animation-delay: 1s;
+        }
+        
+        .description p:nth-of-type(3) {
+            animation-delay: 1.5s;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 50px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            overflow: hidden; /* Ensure content does not overflow */
+            transform-style: preserve-3d;
+        }
+        section h2 {
+            transform: rotateX(10deg);
+        }
+        .animate__fadeInUp {
+            animation: fadeInUp 1s ease-in-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) rotateX(20deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg);
+            }
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-top: 20px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="animate__animated animate__fadeInDown">Result</h1>
+    <header class="animate__animated animate__fadeIn">
+        <nav>
+            <ul>
+                <a href="#Semester1" class="animate__animated animate__fadeInLeft">Semester 1</a>
+                <a href="#Semester2" class="animate__animated animate__fadeInLeft">Semester 2</a>
+                <a href="#Semester3" class="animate__animated animate__fadeInLeft">Semester 3</a>
+                <a href="#Semester4" class="animate__animated animate__fadeInLeft">Semester 4</a>
+                <a href="#Semester5" class="animate__animated animate__fadeInLeft">Semester 5</a>
+                <a href="#Semester6" class="animate__animated animate__fadeInLeft">Semester 6</a>
+                <a href="#Semester7" class="animate__animated animate__fadeInLeft">Semester 7</a>
+                <a href="#Semester8" class="animate__animated animate__fadeInLeft">Semester 8</a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="Semester1" class="animate__animated animate__fadeInUp">
+            <h2>Semester 1</h2>
+            <img src="result.jpg">
+        </section>
+        <section id="Semester2" class="animate__animated animate__fadeInUp">
+            <h2>Semester 2</h2>
+            <img src="result.jpg">
+        </section>
+        <section id="Semester3" class="animate__animated animate__fadeInUp">
+            <h2>Semester 3</h2>
+            <img src="result.jpg">
+        </section>
+        <section id="Semester4" class="animate__animated animate__fadeInUp">
+            <h2>Semester 4</h2>
+            <img src="result.jpg">
+        </section>
+        <section id="Semester5" class="animate__animated animate__fadeInUp">
+            <h2>Semester 5</h2>
+            <img src="result.jpg">
+        </section>
+        <section id="Semester6" class="animate__animated animate__fadeInUp">
+            <h2>Semester 6</h2>
+            <img src="result.jpg">
+        </section>
+        <section id="Semester7" class="animate__animated animate__fadeInUp">
+            <h2>Semester 7</h2>
+          <img src="result.jpg">
+        </section>
+        <section id="Semester8" class="animate__animated animate__fadeInUp">
+            <h2>Semester 8</h2>
+            <img src="result.jpg">
+        </section>
+    </main>
+</body>
+</html>

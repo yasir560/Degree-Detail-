@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0; /* Remove padding */
+            background: linear-gradient(to right, #008080, #FFFFFF); /* Teal gradient */
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 128, 128, 0.8); /* Teal color with transparency */
+            margin: 0; /* Removed margin */
+            position: absolute;
+            top: 0;
+            left: 0; /* Align to the left */
+            width: 100%; /* Full width */
+            text-align: center; /* Center the header content */
+            z-index: 1000;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center nav items */
+        }
+        
+        nav ul a {
+            color: white;
+            text-decoration: none;
+            margin: 0;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: transform 0.3s, background-color 0.3s; /* Transition for hover effect */
+        }
+        
+        nav ul a:hover {
+            background-color: #008080; /* Updated hover color to teal */
+            transform: rotateY(15deg) scale(1.1); /* 3D hover effect */
+        }
+        
+        /* Header Section Styles */
+        .header-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align items to the start (top) */
+            height: 100vh;
+            background: url('Semester.jpg') no-repeat center center;
+            background-size: cover; /* Cover the entire background */
+            color: white; /* Change text color to white for better contrast */
+            text-align: center;
+            padding-top: 20px; /* Adjust padding to move heading down from the top */
+        }
+        
+        .description {
+            width: 60%;
+        }
+        
+        .description h1 {
+            font-size: 2.5em;
+            color: #003049;
+            animation: neon 1.5s ease-in-out infinite alternate;
+            font-weight: bold; /* Make the heading bold */
+        }
+        
+        .description p {
+            font-size: 1.2em;
+            color: #000000; /* Changed text color to black */
+            font-weight: bold; /* Make the text bold */
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .description p:nth-of-type(1) {
+            animation-delay: 0.5s;
+        }
+        
+        .description p:nth-of-type(2) {
+            animation-delay: 1s;
+        }
+        
+        .description p:nth-of-type(3) {
+            animation-delay: 1.5s;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            display: none;
+            margin-top: 20px;
+        }
+        section.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        a.download-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a.download-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header class="animate__animated animate__fadeIn">
+        <nav>
+            <ul>
+                <li><a href="#Semester1" onclick="showSemester('Semester1')">Semester 1</a></li>
+                <li><a href="#Semester2" onclick="showSemester('Semester2')">Semester 2</a></li>
+                <li><a href="#Semester3" onclick="showSemester('Semester3')">Semester 3</a></li>
+                <li><a href="#Semester4" onclick="showSemester('Semester4')">Semester 4</a></li>
+                <li><a href="#Semester5" onclick="showSemester('Semester5')">Semester 5</a></li>
+                <li><a href="#Semester6" onclick="showSemester('Semester6')">Semester 6</a></li>
+                <li><a href="#Semester7" onclick="showSemester('Semester7')">Semester 7</a></li>
+                <li><a href="#Semester8" onclick="showSemester('Semester8')">Semester 8</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="Semester1" class="animate__animated animate__fadeIn">
+            <h2>Semester 1</h2>
+            <h3>Courses</h3>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credit Hour</th>
+                </tr>
+                <tr>
+                    <td>Programming Fundamentals</td>
+                    <td>4(3,1)</td>
+                </tr>
+                <tr>
+                    <td>Introduction to ICT</td>
+                    <td>3(2,1)</td>
+                </tr>
+                <tr>
+                    <td>English Composition & Comprehension</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Univ Elective – I (Financial Accounting)</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Applied Physics</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Zero Mathematics (Part I)</td>
+                    <td>3(3,0)</td>
+                </tr>
+            </table>
+            <h3>Past Papers</h3>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <h3>Result</h3>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+        </section>
+        <section id="Semester2" class="animate__animated animate__fadeIn">
+            <h2>Semester 2</h2>
+            <h3>Courses</h3>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credit Hour</th>
+                </tr>
+                <tr>
+                    <td>Object Oriented Programming</td>
+                    <td>4(3,1)</td>
+                </tr>
+                <tr>
+                    <td>Discrete Structures</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Communication & Presentation Skills</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Basic Electronics</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Univ Elective – II (Human Resource Management)</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Zero Mathematics (Part II)**</td>
+                    <td>3(3,0)</td>
+                </tr>
+            </table>
+            <h3>Past Papers</h3>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <h3>Result</h3>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+        </section>
+        <section id="Semester3" class="animate__animated animate__fadeInUp">
+            <h2>Semester 3</h2>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credit Hour</th>
+                </tr>
+                <tr>
+                    <td>Database Systems</td>
+                    <td>4(3,1)</td>
+                </tr>
+                <tr>
+                    <td>Probability & Statistics</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Operating Systems</td>
+                    <td>4(3,1)</td>
+                </tr>
+                <tr>
+                    <td>Technical & Business Writing</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Islamic Studies/ Ethics</td>
+                    <td>2(2,0)</td>
+                </tr>
+                <tr>
+                    <td>Pakistan Studies</td>
+                    <td>2(2,0)</td>
+                </tr>
+            </table>
+            <h3>Past Papers</h3>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <h3>Result</h3>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+        </section>
+        <section id="Semester4" class="animate__animated animate__fadeInUp">
+            <h2>Semester 4</h2>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credit Hour</th>
+                </tr>
+                <tr>
+                    <td>Data Structures and Algorithms</td>
+                    <td>4(3,1)</td>
+                </tr>
+                <tr>
+                    <td>Software Engineering</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>CS Elective – I (Visual Programming)</td>
+                    <td>3(2,1)</td>
+                </tr>
+                <tr>
+                    <td>University Elective – IV (Economics)</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>University Elective – III (Entrepreneurship)</td>
+                    <td>3(3,0)</td>
+                </tr>
+            </table>
+            <h3>Past Papers</h3>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <h3>Result</h3>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+        </section>
+        <section id="Semester5" class="animate__animated animate__fadeInUp">
+            <h2>Semester 5</h2>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credit Hour</th>
+                </tr>
+                <tr>
+                    <td>Computer Organization & Assembly Language</td>
+                    <td>4(3,1)</td>
+                </tr>
+                <tr>
+                    <td>Digital Logic Design</td>
+                    <td>4(3,1)</td>
+                </tr>
+                <tr>
+                    <td>Calculus and Analytical Geometry</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Computer Networks</td>
+                    <td>4(3,1)</td>
+                </tr>
+                <tr>
+                    <td>CS Elective – II (Web Engineering)</td>
+                    <td>3(2,1)</td>
+                </tr>
+            </table>
+            <h3>Past Papers</h3>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <h3>Result</h3>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+        </section>
+        <section id="Semester6" class="animate__animated animate__fadeInUp">
+            <h2>Semester 6</h2>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credit Hour</th>
+                </tr>
+                <tr>
+                    <td>Theory of Automata</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Design & Analysis of Algorithms</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Artificial Intelligence</td>
+                    <td>4(3,1)</td>
+                </tr>
+                <tr>
+                    <td>Linear Algebra</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>CS Elective – III (Mobile Computing)</td>
+                    <td>3(3,0)</td>
+                </tr>
+            </table>
+        </section>
+        <section id="Semester7" class="animate__animated animate__fadeInUp">
+            <h2>Semester 7</h2>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credit Hour</th>
+                </tr>
+                <tr>
+                    <td>Parallel & Distributed Computing</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Compiler Construction </td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Numerical Construction </td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Differential Equation</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>CS Elective – IV</td>
+                    <td>3(3,0)</td>
+                </tr>
+                
+            </table>
+            <h3>Past Papers</h3>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <h3>Result</h3>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+        </section>
+        <section id="Semester7" class="animate__animated animate__fadeInUp">
+            <h2>Semester 7</h2>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credit Hour</th>
+                </tr>
+                <tr>
+                    <td>Parallel & Distributed Computing</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Compiler Construction </td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Numerical Construction </td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Differential Equation</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>CS Elective – IV</td>
+                    <td>3(3,0)</td>
+                </tr>
+                
+            </table>
+            <h3>Past Papers</h3>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <h3>Result</h3>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+        </section>
+        <section id="Semester8" class="animate__animated animate__fadeInUp">
+            <h2>Semester 8</h2>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credit Hour</th>
+                </tr>
+                <tr>
+                    <td>Information Security </td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Professional Practices </td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Multi-Variate Calculus</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>CS Elective – V</td>
+                    <td>3(3,0)</td>
+                </tr>
+                <tr>
+                    <td>Final Year Project</td>
+                    <td>6(6,0)</td>
+                </tr>
+                
+            </table>
+            <h3>Past Papers</h3>
+            <a href="https://drive.google.com/drive/folders/1AEIKRagtJ7waGZgO_citJedlOhU4g8bh" target="_blank" class="download-link animate__animated animate__fadeInUp">Download Past Papers</a>
+            <h3>Result</h3>
+            <img src="result.jpg" alt="Picture of Result" width="400" height="400"target="_blank" class="download-link animate__animated animate__fadeInUp">Check Result</a>
+        </section>
+
+        
+        <!-- Repeat similar sections for Semester 2 to Semester 8 -->
+        
+    </main>
+    <script>
+        function showSemester(semesterId) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(semesterId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
