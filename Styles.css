@@ -26,6 +26,7 @@ header {
     /* Center the header content */
     z-index: 1000;
     display: flex;
+    flex-direction: row; /* Always keep header items in a row */
     justify-content: space-between;
     /* Space between items */
     align-items: center;
@@ -42,6 +43,7 @@ nav ul {
     display: flex;
     gap: 10px;
     /* Space between nav items */
+    flex-direction: row; /* Ensure nav items are in a row */
 }
 
 nav ul li {
@@ -86,10 +88,6 @@ nav ul a:hover {
 /* Media Queries */
 @media (max-width: 768px) {
     header {
-        flex-direction: row;
-        /* Ensure items stay in one row */
-        justify-content: space-between;
-        /* Space between items */
         padding: 10px;
         /* Adjust padding for smaller screens */
     }
@@ -101,9 +99,6 @@ nav ul a:hover {
         /* Adjust space between items */
     }
 }
-
-/* Other styles remain the same */
-
 
 .description-container {
     display: flex;
@@ -304,15 +299,13 @@ a:hover {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        /* Stack header elements vertically */
-        align-items: center;
-        /* Center items */
+        padding: 10px;
+        /* Adjust padding for smaller screens */
     }
 
     nav ul {
-        flex-direction: column;
-        /* Stack nav items vertically */
+        flex-direction: row;
+        /* Ensure nav items stay in one row */
         gap: 5px;
         /* Adjust space between items */
     }
