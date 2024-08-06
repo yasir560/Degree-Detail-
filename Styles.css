@@ -3,28 +3,49 @@ body {
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
     margin: 0;
-    padding: 0; /* Remove padding */
-    background: linear-gradient(to right, #008080, #FFFFFF); /* Teal gradient */
+    padding: 0;
+    /* Remove padding */
+    background: linear-gradient(to right, #008080, #FFFFFF);
+    /* Teal gradient */
 }
 
 /* Header Styles */
 header {
-    background-color: rgba(0, 128, 128, 0.8); /* Teal color with transparency */
-    margin: 0; /* Removed margin */
-    position: absolute;
+    background-color: rgba(0, 128, 128, 0.8);
+    /* Teal color with transparency */
+    margin: 0;
+    /* Removed margin */
+    position: fixed;
+    /* Fixed position for consistent header */
     top: 0;
-    left: 0; /* Align to the left */
-    width: 100%; /* Full width */
-    text-align: center; /* Center the header content */
+    left: 0;
+    /* Align to the left */
+    width: 100%;
+    /* Full width */
+    text-align: center;
+    /* Center the header content */
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    /* Space between items */
+    align-items: center;
+    /* Center items vertically */
+    padding: 10px 20px;
+    /* Padding for spacing */
 }
 
+/* Navigation Styles */
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; /* Center nav items */
+    gap: 10px;
+    /* Space between nav items */
+}
+
+nav ul li {
+    display: inline;
 }
 
 nav ul a {
@@ -33,12 +54,15 @@ nav ul a {
     margin: 0;
     padding: 10px 20px;
     display: inline-block;
-    transition: transform 0.3s, background-color 0.3s; /* Transition for hover effect */
+    transition: transform 0.3s, background-color 0.3s;
+    /* Transition for hover effect */
 }
 
 nav ul a:hover {
-    background-color: #008080; /* Updated hover color to teal */
-    transform: rotateY(15deg) scale(1.1); /* 3D hover effect */
+    background-color: #008080;
+    /* Updated hover color to teal */
+    transform: rotateY(15deg) scale(1.1);
+    /* 3D hover effect */
 }
 
 /* Header Section Styles */
@@ -46,14 +70,40 @@ nav ul a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Align items to the start (top) */
+    justify-content: flex-start;
+    /* Align items to the start (top) */
     height: 100vh;
     background: url('University Image.jpg') no-repeat center center;
-    background-size: cover; /* Cover the entire background */
-    color: white; /* Change text color to white for better contrast */
+    background-size: cover;
+    /* Cover the entire background */
+    color: white;
+    /* Change text color to white for better contrast */
     text-align: center;
-    padding-top: 20px; /* Adjust padding to move heading down from the top */
+    padding-top: 70px;
+    /* Adjust padding to account for fixed header */
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        /* Ensure items stay in one row */
+        justify-content: space-between;
+        /* Space between items */
+        padding: 10px;
+        /* Adjust padding for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: row;
+        /* Ensure nav items stay in one row */
+        gap: 5px;
+        /* Adjust space between items */
+    }
+}
+
+/* Other styles remain the same */
+
 
 .description-container {
     display: flex;
@@ -63,21 +113,26 @@ nav ul a:hover {
 
 .description {
     width: 60%;
-    text-align: center; /* Center text inside description */
+    text-align: center;
+    /* Center text inside description */
 }
 
 .description h1 {
     font-size: 2.5em;
-    color: #FFFFFF; /* White color for better contrast */
+    color: #FFFFFF;
+    /* White color for better contrast */
     animation: neon 1.5s ease-in-out infinite alternate;
-    font-weight: bold; /* Make the heading bold */
+    font-weight: bold;
+    /* Make the heading bold */
     margin-bottom: 20px;
 }
 
 .description p {
     font-size: 1.2em;
-    color: #FFFFFF; /* White color for better contrast */
-    font-weight: bold; /* Make the text bold */
+    color: #FFFFFF;
+    /* White color for better contrast */
+    font-weight: bold;
+    /* Make the text bold */
 }
 
 .highlight {
@@ -104,8 +159,10 @@ nav ul a:hover {
 
 .image {
     position: relative;
-    width: 20%; /* Adjusted width for better layout */
-    margin-top: 20px; /* Add margin for spacing */
+    width: 20%;
+    /* Adjusted width for better layout */
+    margin-top: 20px;
+    /* Add margin for spacing */
 }
 
 .image img {
@@ -135,6 +192,7 @@ nav ul a:hover {
     from {
         opacity: 0.5;
     }
+
     to {
         opacity: 1;
     }
@@ -147,7 +205,8 @@ main {
 section {
     margin-bottom: 50px;
     padding: 20px;
-    background-color: rgba(244, 244, 244, 0.8); /* Slight transparency */
+    background-color: rgba(244, 244, 244, 0.8);
+    /* Slight transparency */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(48, 255, 7, 0.2);
@@ -174,6 +233,7 @@ section h2 i {
         opacity: 0;
         transform: translateY(30px) rotateX(20deg);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) rotateX(0deg);
@@ -184,6 +244,7 @@ section h2 i {
     from {
         text-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF, 0 0 30px #007BFF, 0 0 40px #007BFF, 0 0 50px #007BFF, 0 0 60px #007BFF, 0 0 70px #007BFF;
     }
+
     to {
         text-shadow: 0 0 20px #007BFF, 0 0 30px #007BFF, 0 0 40px #007BFF, 0 0 50px #007BFF, 0 0 60px #007BFF, 0 0 70px #007BFF, 0 0 80px #007BFF;
     }
@@ -193,6 +254,7 @@ section h2 i {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -211,4 +273,78 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .description {
+        width: 80%;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-section {
+        height: auto;
+        padding-top: 80px;
+        /* Adjust padding to account for header */
+    }
+
+    .description h1 {
+        font-size: 2em;
+    }
+
+    .description p {
+        font-size: 1em;
+    }
+
+    .image {
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        /* Stack header elements vertically */
+        align-items: center;
+        /* Center items */
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* Stack nav items vertically */
+        gap: 5px;
+        /* Adjust space between items */
+    }
+
+    nav ul a {
+        padding: 10px;
+    }
+
+    .description {
+        width: 90%;
+    }
+
+    .image {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-section {
+        padding-top: 90px;
+        /* Further adjust padding for smaller screens */
+    }
+
+    .description h1 {
+        font-size: 1.5em;
+    }
+
+    .description p {
+        font-size: 0.9em;
+    }
+
+    .image {
+        width: 70%;
+    }
 }
