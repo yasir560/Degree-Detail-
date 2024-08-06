@@ -16,7 +16,6 @@
         
         header {
             background-color: #008080; /* Teal color */
-            /* Added padding at the top */
             margin: 0; /* Removed margin */
             position: absolute;
             top: 0;
@@ -42,7 +41,7 @@
         }
         
         nav ul a:hover {
-            background-color: #008080; /* Updated hover color to teal */
+            background-color: #006666; /* Darker teal for hover */
             transform: rotateY(15deg) scale(1.1); /* 3D hover effect */
         }
         
@@ -83,9 +82,11 @@
         .description p:nth-of-type(3) {
             animation-delay: 1.5s;
         }
+        
         main {
             padding: 20px;
         }
+        
         section {
             margin-bottom: 50px;
             padding: 20px;
@@ -95,12 +96,22 @@
             overflow: hidden; /* Ensure content does not overflow */
             transform-style: preserve-3d;
         }
+        
         section h2 {
             transform: rotateX(10deg);
         }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center images horizontally */
+        }
+        
         .animate__fadeInUp {
             animation: fadeInUp 1s ease-in-out;
         }
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -111,17 +122,84 @@
                 transform: translateY(0) rotateX(0deg);
             }
         }
+        
         h1 {
             font-size: 2.5em;
             text-align: center;
             margin-top: 20px;
         }
+        
         a {
             color: #007BFF;
             text-decoration: none;
         }
+        
         a:hover {
             text-decoration: underline;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header-section {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            nav ul a {
+                padding: 10px;
+                font-size: 1em;
+            }
+
+            .description {
+                width: 100%;
+            }
+
+            .description h1 {
+                font-size: 2em;
+            }
+
+            .description p {
+                font-size: 1em;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-top: 10px;
+            }
+
+            nav ul a {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+
+            .description h1 {
+                font-size: 1.8em;
+            }
+
+            .description p {
+                font-size: 0.9em;
+            }
+
+            section {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -144,35 +222,35 @@
     <main>
         <section id="Semester1" class="animate__animated animate__fadeInUp">
             <h2>Semester 1</h2>
-            <img src="result.jpg">
+            <img src="result.jpg" alt="Semester 1 Result">
         </section>
         <section id="Semester2" class="animate__animated animate__fadeInUp">
             <h2>Semester 2</h2>
-            <img src="result.jpg">
+            <img src="result.jpg" alt="Semester 2 Result">
         </section>
         <section id="Semester3" class="animate__animated animate__fadeInUp">
             <h2>Semester 3</h2>
-            <img src="result.jpg">
+            <img src="result.jpg" alt="Semester 3 Result">
         </section>
         <section id="Semester4" class="animate__animated animate__fadeInUp">
             <h2>Semester 4</h2>
-            <img src="result.jpg">
+            <img src="result.jpg" alt="Semester 4 Result">
         </section>
         <section id="Semester5" class="animate__animated animate__fadeInUp">
             <h2>Semester 5</h2>
-            <img src="result.jpg">
+            <img src="result.jpg" alt="Semester 5 Result">
         </section>
         <section id="Semester6" class="animate__animated animate__fadeInUp">
             <h2>Semester 6</h2>
-            <img src="result.jpg">
+            <img src="result.jpg" alt="Semester 6 Result">
         </section>
         <section id="Semester7" class="animate__animated animate__fadeInUp">
             <h2>Semester 7</h2>
-          <img src="result.jpg">
+            <img src="result.jpg" alt="Semester 7 Result">
         </section>
         <section id="Semester8" class="animate__animated animate__fadeInUp">
             <h2>Semester 8</h2>
-            <img src="result.jpg">
+            <img src="result.jpg" alt="Semester 8 Result">
         </section>
     </main>
 </body>
