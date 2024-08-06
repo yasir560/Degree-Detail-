@@ -16,13 +16,16 @@
         
         header {
             background-color: #008080; /* Teal color */
-            /* Added padding at the top */
-            margin: 0; /* Removed margin */
-            position: absolute;
+       /* Fixed position for consistent header */
             top: 0;
-            right: 0;
-            width: auto; /* Adjust width to fit content */
+            left: 0;
+            width: 100%; /* Full width */
             z-index: 1000;
+            display: flex; /* Ensure items are in a row */
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Center items vertically */
+            padding: 10px 20px; /* Padding for spacing */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
         }
         
         nav ul {
@@ -30,27 +33,32 @@
             padding: 0;
             margin: 0;
             display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping */
+            gap: 10px; /* Space between nav items */
+        }
+        
+        nav ul li {
+            margin: 0;
         }
         
         nav ul a {
             color: white;
             text-decoration: none;
-            margin: 0;
             padding: 10px 20px;
             display: inline-block;
             transition: transform 0.3s, background-color 0.3s; /* Transition for hover effect */
         }
         
         nav ul a:hover {
-            background-color: #008080; /* Updated hover color to teal */
+            background-color: #006666; /* Darker teal color for hover */
             transform: rotateY(15deg) scale(1.1); /* 3D hover effect */
         }
         
         .header-section {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 40px 20px 20px 20px; /* Adjust top padding to move heading up */
+            justify-content: center;
+            padding: 80px 20px 20px 20px; /* Adjust top padding to move heading up */
             height: 100vh;
         }
         
@@ -85,6 +93,7 @@
         }
         main {
             padding: 20px;
+            margin-top: 80px; /* Space for fixed header */
         }
         section {
             margin-bottom: 50px;
@@ -103,6 +112,58 @@
         h2 {
             margin-top: 0;
         }
+        
+        /* Media Queries */
+        @media (max-width: 1200px) {
+            .description {
+                width: 80%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .header-section {
+                padding-top: 100px; /* Adjust padding to account for header */
+            }
+        
+            .description h1 {
+                font-size: 2em;
+            }
+        
+            .description p {
+                font-size: 1em;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; /* Stack nav items vertically on smaller screens */
+                gap: 0; /* Remove gap for vertical stacking */
+            }
+        
+            nav ul a {
+                padding: 10px;
+                text-align: center; /* Center text in nav items */
+            }
+        
+            .description {
+                width: 90%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-section {
+                padding-top: 120px; /* Further adjust padding for smaller screens */
+            }
+        
+            .description h1 {
+                font-size: 1.5em;
+            }
+        
+            .description p {
+                font-size: 0.9em;
+            }
+        }
+        
     </style>
 </head>
 <body>
