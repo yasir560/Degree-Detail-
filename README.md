@@ -1,1 +1,1 @@
-This is my uiveristy  degree detail  website
+This is my univeristy  degree detail  website.
